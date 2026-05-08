@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResumeForge - Build Your Resume</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Builder Stylesheet -->
+  <link rel="stylesheet" href="builder.css" />
+</head>
+<body>
+
+  <!-- ========== TOP HEADER BAR ========== -->
+  <header class="builder-header">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">&#9998;</span>
+      <span class="logo-text">ResumeForge</span>
+    </a>
+
+    <div class="header-actions">
+      <!-- Template selector dropdown -->
+      <select id="template-select" class="template-select">
+        <option value="modern">Modern Template</option>
+        <option value="classic">Classic Template</option>
+        <option value="minimal">Minimal Template</option>
+      </select>
+
+      <!-- Download button -->
+      <button id="download-btn" class="btn btn-primary btn-sm" onclick="downloadPDF()">
+        &#8681; Download PDF
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ========== MAIN BUILDER LAYOUT ========== -->
+  <main class="builder-main">
+
+    <!-- LEFT SIDE: Input Form -->
+    <aside class="form-panel" id="form-panel">
+
+      <!-- Mobile toggle button -->
+      <div class="panel-toggle" id="panel-toggle">&#9776;</div>
+
+      <!-- Personal Information -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <span class="fs-icon">&#128100;</span> Personal Info
+        </h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="John Doe" />
+          </div>
+          <div class="form-group">
+            <label for="jobTitle">Job Title</label>
+            <input type="text" id="jobTitle" placeholder="Frontend Developer" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="userEmail">Email</label>
+            <input type="email" id="userEmail" placeholder="john@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="userPhone">Phone</label>
+            <input type="tel" id="userPhone" placeholder="+1 555-123-4567" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="userLocation">Location</label>
+            <input type="text" id="userLocation" placeholder="San Francisco, CA" />
+          </div>
+          <div class="form-group">
+            <label for="userWebsite">Website / LinkedIn</label>
+            <input type="text" id="userWebsite" placeholder="linkedin.com/in/johndoe" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="userSummary">Professional Summary</label>
+          <textarea id="userSummary" rows="3" placeholder="Brief professional summary..."></textarea>
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <span class="fs-icon">&#128188;</span> Experience
+        </h3>
+        <div id="experience-list">
+          <!-- Experience entries will be added here by JavaScript -->
+        </div>
+        <button class="btn-add" onclick="addExperience()">+ Add Experience</button>
+      </div>
+
+      <!-- Education -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <span class="fs-icon">&#127891;</span> Education
+        </h3>
+        <div id="education-list">
+          <!-- Education entries will be added here by JavaScript -->
+        </div>
+        <button class="btn-add" onclick="addEducation()">+ Add Education</button>
+      </div>
+
+      <!-- Skills -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <span class="fs-icon">&#9889;</span> Skills
+        </h3>
+        <div class="form-group">
+          <label for="userSkills">Skills (comma-separated)</label>
+          <input type="text" id="userSkills" placeholder="JavaScript, React, Python, Figma..." />
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT SIDE: Live Resume Preview -->
+    <section class="preview-panel">
+      <div class="preview-wrapper" id="resume-preview">
+        <!-- Resume preview content is rendered by JavaScript -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Builder JavaScript -->
+  <script src="builder.js"></script>
+</body>
+</html>
